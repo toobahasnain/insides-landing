@@ -148,7 +148,7 @@ function PhoneMockup({ lang = "de" }) {
   useEffect(() => {
     const t = setInterval(() => setMsgIdx(m => (m + 1) % msgs.length), 2200);
     return () => clearInterval(t);
-  }, []);
+  }, [msgs.length]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <motion.div
       animate={{ y: [0, -12, 0], rotateY: [0, 4, 0] }}
@@ -392,46 +392,9 @@ function FeaturesTabSection({ t, lang }) {
   );
 }
 
-// ── FEATURE CARD ──────────────────────────────────────────
-function FeatureCard({ icon, title, desc, mockup, accent, delay }) {
-  const cardRef = useRef(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  function onMouseMove(e) {
-    const r = cardRef.current.getBoundingClientRect();
-    setTilt({ x: ((e.clientX - r.left) / r.width - 0.5) * 12, y: ((e.clientY - r.top) / r.height - 0.5) * -12 });
-  }
-  return (
-    <FadeIn delay={delay} style={{ height: "100%" }}>
-      <motion.div ref={cardRef} onMouseMove={onMouseMove} onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-        animate={{ rotateX: tilt.y, rotateY: tilt.x }} transition={{ type: "spring", stiffness: 200, damping: 20 }}
-        style={{ background: "white", borderRadius: 28, border: "1.5px solid rgba(228,183,200,0.25)", overflow: "hidden", transformStyle: "preserve-3d", cursor: "default", display: "flex", flexDirection: "column", height: "100%" }}>
-        <div style={{ height: 5, background: accent, flexShrink: 0 }} />
-        <div style={{ padding: "30px 26px", flex: 1 }}>
-          <div style={{ fontSize: 30, marginBottom: 14 }}>{icon}</div>
-          <h3 style={{ fontFamily: "'DM Serif Display',serif", fontSize: 22, color: C.midnight, marginBottom: 10 }}>{title}</h3>
-          <p style={{ color: "#666", fontSize: 14.5, lineHeight: 1.7, marginBottom: 0 }}>{desc}</p>
-        </div>
-        <div style={{ background: "#f8f5f2", padding: "24px", display: "flex", justifyContent: "center", height: 320, alignItems: "center", flexShrink: 0 }}>
-          {mockup}
-        </div>
-      </motion.div>
-    </FadeIn>
-  );
-}
 
-// ── TEAM MEMBER CARD ──────────────────────────────────────
-function TeamCard({ member, color, delay }) {
-  return (
-    <FadeIn delay={delay}>
-      <motion.div whileHover={{ y: -6 }}
-        style={{ textAlign: "center", padding: "34px 18px", borderRadius: 24, border: "1.5px solid rgba(228,183,200,0.3)", background: C.cream, cursor: "default" }}>
-        <div style={{ width: 62, height: 62, borderRadius: "50%", background: color, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'DM Serif Display',serif", fontSize: 22, color: "white", margin: "0 auto 16px" }}>{member.init}</div>
-        <div style={{ fontFamily: "'DM Serif Display',serif", fontSize: 18, color: C.midnight, marginBottom: 7 }}>{member.name}</div>
-        <div style={{ fontSize: 11, color: C.violet, letterSpacing: 1, textTransform: "uppercase" }}>{member.role}</div>
-      </motion.div>
-    </FadeIn>
-  );
-}
+
+
 
 // ── FAQ ITEM ──────────────────────────────────────────────
 function FaqItem({ q, a }) {
