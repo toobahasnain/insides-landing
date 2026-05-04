@@ -449,9 +449,8 @@ export default function App() {
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 200, background: "rgba(253,248,244,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(228,183,200,0.25)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", height: 64, padding: "0 24px", gap: 8 }}>
-          <div style={{ marginRight: "auto", cursor: "pointer", lineHeight: 1 }} onClick={() => scrollTo("hero")}>
-            <div style={{ fontFamily: "'Champ', sans-serif", fontSize: 24, color: C.midnight, lineHeight: 1 }}>Insides</div>
-            <div style={{ fontSize: 9, letterSpacing: 2.5, color: C.violet, textTransform: "uppercase", marginTop: 2 }}>by Intimate Insights</div>
+          <div style={{ marginRight: "auto", cursor: "pointer" }} onClick={() => scrollTo("hero")}>
+            <img src="/INSIDES_Full-Logo_Midnight-Blue.png" alt="Insides" style={{ height: 38, width: "auto", display: "block" }} />
           </div>
           <div style={{ display: "flex", gap: 2 }} className="desk-nav">
             {navItems.map(n => (
