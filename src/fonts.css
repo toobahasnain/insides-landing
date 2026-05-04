@@ -1,0 +1,25 @@
+/* ── Champ — Headings ── */
+@font-face {
+  font-family: 'Champ';
+  src: url('./fonts/Champ-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Alecrim — Body ── */
+@font-face {
+  font-family: 'Alecrim';
+  src: url('./fonts/Alecrim-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alecrim';
+  src: url('./fonts/Alecrim-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
