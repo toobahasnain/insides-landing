@@ -434,8 +434,36 @@ function SectionHeader({ label, headline, sub, labelColor = C.violet, headlineCo
 // ── MAIN APP ──────────────────────────────────────────────
 export default function App() {
   const [lang, setLang] = useState("de");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [userType, setUserType] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbxi9vDzMRSk_GbxGjrbQrxfJdfIQO1WOdHX9D7Ls0b1tha19TTnBwIqVCSVR5RN3tLY/exec";
+
+  const submitToSheet = async () => {
+    if (!name.trim()) { setFormError(lang === "de" ? "Bitte Name eingeben" : "Please enter your name"); return; }
+    if (!email.trim() || !email.includes("@") || !email.includes(".")) { setFormError(lang === "de" ? "Bitte gültige E-Mail eingeben" : "Please enter a valid email"); return; }
+    if (!userType) { setFormError(lang === "de" ? "Bitte Typ auswählen" : "Please select your type"); return; }
+    
+    setFormError("");
+    setLoading(true);
+    
+    try {
+      await fetch(SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, type: userType })
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setFormError(lang === "de" ? "Fehler — bitte erneut versuchen" : "Error — please try again");
+    }
+    setLoading(false);
+  };
   const [menuOpen, setMenuOpen] = useState(false);
   const t = T[lang];
 
@@ -501,30 +529,51 @@ export default function App() {
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-          style={{ width: "100%", maxWidth: 440, position: "relative", zIndex: 2 }}>
-          <p style={{ fontSize: 13, color: "#999", marginBottom: 12 }}>{t.hero.emailLabel}</p>
+          style={{ width: "100%", maxWidth: 480, position: "relative", zIndex: 2 }}>
+          <p style={{ fontSize: 13, color: "#999", marginBottom: 16 }}>{t.hero.emailLabel}</p>
           {!submitted ? (
-            <div style={{ display: "flex", borderRadius: 50, overflow: "hidden", boxShadow: "0 8px 30px rgba(38,103,187,0.15)" }}>
-              <input id="emailInput" value={email} onChange={e => setEmail(e.target.value)} placeholder={t.hero.emailPlaceholder}
-                onKeyDown={e => e.key === "Enter" && email.trim() && email.includes("@") && email.includes(".") && setSubmitted(true)}
-                style={{ flex: 1, padding: "14px 20px", border: "none", outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 15, background: "white" }} />
-              <button onClick={() => {
-                  if (email.trim() && email.includes("@") && email.includes(".")) {
-                    setSubmitted(true);
-                  } else {
-                    document.getElementById("emailInput").style.outline = "2px solid #E4B7C8";
-                    setTimeout(() => { document.getElementById("emailInput").style.outline = "none"; }, 2000);
-                  }
-                }}
-                style={{ padding: "14px 20px", background: C.midnight, color: "white", border: "none", cursor: "pointer", fontFamily: "'Alecrim', sans-serif", fontSize: 14, fontWeight: 500, whiteSpace: "nowrap" }}>
-                {t.hero.emailBtn}
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {/* Name field */}
+              <input
+                value={name} onChange={e => setName(e.target.value)}
+                placeholder={lang === "de" ? "Dein Name" : "Your name"}
+                style={{ width: "100%", padding: "14px 20px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 15, background: "white", boxSizing: "border-box" }}
+              />
+              {/* Email field */}
+              <input
+                value={email} onChange={e => setEmail(e.target.value)}
+                placeholder={t.hero.emailPlaceholder}
+                style={{ width: "100%", padding: "14px 20px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 15, background: "white", boxSizing: "border-box" }}
+              />
+              {/* Type selector */}
+              <select
+                value={userType} onChange={e => setUserType(e.target.value)}
+                style={{ width: "100%", padding: "14px 20px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 15, background: "white", boxSizing: "border-box", color: userType ? "#2a2a2a" : "#999", appearance: "none", cursor: "pointer" }}
+              >
+                <option value="" disabled>{lang === "de" ? "Ich bin..." : "I am..."}</option>
+                <option value="Student / Gen Z">{lang === "de" ? "👩‍🎓 Schüler*in / Gen Z" : "👩‍🎓 Student / Gen Z"}</option>
+                <option value="School / Teacher">{lang === "de" ? "🏫 Lehrkraft / Schule" : "🏫 Teacher / School"}</option>
+                <option value="Parent">{lang === "de" ? "👪 Elternteil" : "👪 Parent"}</option>
+                <option value="Investor">{lang === "de" ? "💼 Investor*in" : "💼 Investor"}</option>
+                <option value="Other">{lang === "de" ? "✨ Sonstiges" : "✨ Other"}</option>
+              </select>
+              {/* Error message */}
+              {formError && (
+                <p style={{ color: "#c0392b", fontSize: 13, margin: 0, paddingLeft: 8 }}>{formError}</p>
+              )}
+              {/* Submit button */}
+              <button onClick={submitToSheet} disabled={loading}
+                style={{ width: "100%", padding: "15px 20px", background: loading ? "#aaa" : C.midnight, color: "white", border: "none", borderRadius: 50, cursor: loading ? "not-allowed" : "pointer", fontFamily: "'Alecrim', sans-serif", fontSize: 15, fontWeight: 600, transition: "background .2s" }}>
+                {loading ? (lang === "de" ? "Wird gesendet..." : "Sending...") : t.hero.emailBtn}
               </button>
             </div>
           ) : (
-            <motion.p initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
-              style={{ color: C.evergreen, fontSize: 15, padding: 16, background: "rgba(37,124,66,0.08)", borderRadius: 16 }}>
-              {t.hero.emailSuccess}
-            </motion.p>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+              style={{ color: C.evergreen, fontSize: 15, padding: 20, background: "rgba(37,124,66,0.08)", borderRadius: 20, textAlign: "center" }}>
+              <div style={{ fontSize: 32, marginBottom: 8 }}>🎉</div>
+              <p style={{ fontWeight: 600, marginBottom: 4 }}>{t.hero.emailSuccess}</p>
+              <p style={{ fontSize: 13, color: "#888" }}>{lang === "de" ? "Wir melden uns bald!" : "We will be in touch soon!"}</p>
+            </motion.div>
           )}
         </motion.div>
 
