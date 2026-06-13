@@ -506,49 +506,49 @@ export default function App() {
       </nav>
 
       {/* HERO */}
-      <section id="hero" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", padding: "100px 24px 60px", textAlign: "center" }}>
+      <section id="hero" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", padding: "80px 24px 40px", textAlign: "center" }}>
         <Blob style={{ width: 500, height: 500, top: -100, left: -150 }} color={C.blush} delay={0} />
         <Blob style={{ width: 350, height: 350, bottom: 0, right: -80 }} color={C.violet} delay={3} />
         <Blob style={{ width: 220, height: 220, top: "45%", left: "8%" }} color={C.citrus} delay={1.5} />
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-          style={{ display: "inline-flex", alignItems: "center", gap: 10, background: C.midnight, color: "white", borderRadius: 50, padding: "8px 22px", fontSize: 13, letterSpacing: 2, textTransform: "uppercase", marginBottom: 32, position: "relative", zIndex: 2 }}>
+          style={{ display: "inline-flex", alignItems: "center", gap: 10, background: C.midnight, color: "white", borderRadius: 50, padding: "7px 18px", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", marginBottom: 20, position: "relative", zIndex: 2 }}>
           <motion.div animate={{ scale: [1, 0.6, 1], opacity: [1, 0.4, 1] }} transition={{ duration: 1.5, repeat: Infinity }}
             style={{ width: 8, height: 8, borderRadius: "50%", background: C.pale }} />
           {t.hero.badge}
         </motion.div>
 
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-          style={{ fontFamily: "'Champ', sans-serif", fontSize: "clamp(48px,10vw,108px)", color: C.midnight, lineHeight: 0.95, letterSpacing: -2, position: "relative", zIndex: 2, marginBottom: 28 }}>
+          style={{ fontFamily: "'Champ', sans-serif", fontSize: "clamp(36px,6vw,72px)", color: C.midnight, lineHeight: 1, letterSpacing: -1, position: "relative", zIndex: 2, marginBottom: 16 }}>
           {t.hero.h1}<br /><em style={{ color: C.violet }}>{t.hero.h2}</em><br />{t.hero.h3}
         </motion.h1>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
-          style={{ fontSize: "clamp(14px,2.2vw,19px)", color: "#666", maxWidth: 500, lineHeight: 1.7, position: "relative", zIndex: 2, marginBottom: 44 }}>
+          style={{ fontSize: "clamp(13px,1.8vw,16px)", color: "#666", maxWidth: 480, lineHeight: 1.6, position: "relative", zIndex: 2, marginBottom: 24 }}>
           {t.hero.sub}
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-          style={{ width: "100%", maxWidth: 480, position: "relative", zIndex: 2 }}>
-          <p style={{ fontSize: 13, color: "#999", marginBottom: 16 }}>{t.hero.emailLabel}</p>
+          style={{ width: "100%", maxWidth: 420, position: "relative", zIndex: 2 }}>
+          <p style={{ fontSize: 12, color: "#999", marginBottom: 12 }}>{t.hero.emailLabel}</p>
           {!submitted ? (
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {/* Name field */}
               <input
                 value={name} onChange={e => setName(e.target.value)}
                 placeholder={lang === "de" ? "Dein Name" : "Your name"}
-                style={{ width: "100%", padding: "14px 20px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 15, background: "white", boxSizing: "border-box" }}
+                style={{ width: "100%", padding: "11px 18px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 14, background: "white", boxSizing: "border-box" }}
               />
               {/* Email field */}
               <input
                 value={email} onChange={e => setEmail(e.target.value)}
                 placeholder={t.hero.emailPlaceholder}
-                style={{ width: "100%", padding: "14px 20px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 15, background: "white", boxSizing: "border-box" }}
+                style={{ width: "100%", padding: "11px 18px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 14, background: "white", boxSizing: "border-box" }}
               />
               {/* Type selector */}
               <select
                 value={userType} onChange={e => setUserType(e.target.value)}
-                style={{ width: "100%", padding: "14px 20px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 15, background: "white", boxSizing: "border-box", color: userType ? "#2a2a2a" : "#999", appearance: "none", cursor: "pointer" }}
+                style={{ width: "100%", padding: "11px 18px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 14, background: "white", boxSizing: "border-box", color: userType ? "#2a2a2a" : "#999", appearance: "none", cursor: "pointer" }}
               >
                 <option value="" disabled>{lang === "de" ? "Ich bin..." : "I am..."}</option>
                 <option value="Student / Gen Z">{lang === "de" ? "👩‍🎓 Schüler*in / Gen Z" : "👩‍🎓 Student / Gen Z"}</option>
@@ -563,7 +563,7 @@ export default function App() {
               )}
               {/* Submit button */}
               <button onClick={submitToSheet} disabled={loading}
-                style={{ width: "100%", padding: "15px 20px", background: loading ? "#aaa" : C.midnight, color: "white", border: "none", borderRadius: 50, cursor: loading ? "not-allowed" : "pointer", fontFamily: "'Alecrim', sans-serif", fontSize: 15, fontWeight: 600, transition: "background .2s" }}>
+                style={{ width: "100%", padding: "12px 20px", background: loading ? "#aaa" : C.midnight, color: "white", border: "none", borderRadius: 50, cursor: loading ? "not-allowed" : "pointer", fontFamily: "'Alecrim', sans-serif", fontSize: 14, fontWeight: 600, transition: "background .2s" }}>
                 {loading ? (lang === "de" ? "Wird gesendet..." : "Sending...") : t.hero.emailBtn}
               </button>
             </div>
