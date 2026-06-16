@@ -4,6 +4,11 @@
   "icons": [
     {
       "src": "INSIDES_Full-Logo_Midnight-Blue.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "INSIDES_Full-Logo_Midnight-Blue.png",
       "sizes": "192x192",
       "type": "image/png"
     }
