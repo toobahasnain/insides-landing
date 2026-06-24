@@ -13,8 +13,8 @@ const T = {
     langBtn: "EN",
     hero: {
       badge: "Demnächst verfügbar",
-      h1: "Sexualaufklärung,", h2: "die wirklich", h3: "zu dir spricht.",
-      sub: "Edutainment. KI-Coaching. Anonyme Community. Alles an einem Ort — für Gen Z und Schulen.",
+      h1: "Watch. Learn. Enjoy", h2: "Real Intimacy",
+      sub: "Streame realistische Storys über Liebe, Beziehungen und Sexualität. Lerne aus den Erfahrungen anderer und teile deine eigenen. Nutze unseren KI-Coach, um deine Beziehungen und Intimität besser zu verstehen.",
       emailLabel: "Sei unter den Ersten, wenn wir starten",
       emailPlaceholder: "deine@email.de", emailBtn: "Benachrichtigen",
       emailSuccess: "Du bist dabei! Wir melden uns bald. 🎉",
@@ -524,7 +524,7 @@ export default function App() {
         </motion.h1>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
-          style={{ fontSize: "clamp(13px,1.8vw,16px)", color: "#666", maxWidth: 480, lineHeight: 1.6, position: "relative", zIndex: 2, marginBottom: 24 }}>
+          style={{ fontSize: "clamp(13px,1.8vw,16px)", color: "#666", maxWidth: 800, lineHeight: 1.6, position: "relative", zIndex: 2, marginBottom: 24 }}>
           {t.hero.sub}
         </motion.p>
 
