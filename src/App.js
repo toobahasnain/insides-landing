@@ -28,7 +28,7 @@ const T = {
       s1n: "4", s1l: "Gründerinnen", s2n: "3", s2l: "Kernfeatures", s3n: "WHO", s3l: "Standards", s4n: "DSGVO", s4l: "Konform",
     },
     features: {
-      label: "Was wir bauen", headline: "Bildung trifft Unterhaltung", sub: "Drei Wege, echte Sexualaufklärung zu erleben",
+      label: "Was wir bauen", headline: "Bildung trifft Unterhaltung Drei Wege, über Sexualität und Beziehung zu lernen.",
       f1t: "Edutainment-Serie", f1d: "Realistische, nachvollziehbare Geschichten über Beziehungen und Intimität — in Formaten, die Gen Z wirklich schaut. Keine trockene Theorie, sondern echtes Leben.",
       f2t: "Anonyme Community", f2d: "Teile und tausche Erfahrungen mit Gleichaltrigen — vollständig anonym und ohne Urteile. Ein sicherer Raum für echte Gespräche.",
       f3t: "KI-Coach", f3d: "Stell deine privatesten Fragen oder reflektiere persönliche Erlebnisse mit einem einfühlsamen KI-Coach. Rund um die Uhr verfügbar — evidenzbasiert und sicher.",
@@ -581,7 +581,6 @@ export default function App() {
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}
           style={{ position: "absolute", bottom: 32, fontSize: 20, color: C.blush, zIndex: 2 }}>↓</motion.div>
       </section>
-
       {/* Trust Banner */}
       <section id="trusted" className="trust-banner">
         <div className="trust-banner__container">
