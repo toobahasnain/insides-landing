@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import "./App.css";
 import "./fonts.css";
 
 const C = {
@@ -13,8 +14,8 @@ const T = {
     langBtn: "EN",
     hero: {
       badge: "Demnächst verfügbar",
-      h1: "Sexualaufklärung,", h2: "die wirklich", h3: "zu dir spricht.",
-      sub: "Edutainment. KI-Coaching. Anonyme Community. Alles an einem Ort — für Gen Z und Schulen.",
+      h1: "Watch. Learn. Enjoy", h2: "Real Intimacy",
+      sub: "Streame realistische Storys über Liebe, Beziehungen und Sexualität. Lerne aus den Erfahrungen anderer und teile deine eigenen. Nutze unseren KI-Coach, um deine Beziehungen und Intimität besser zu verstehen.",
       emailLabel: "Sei unter den Ersten, wenn wir starten",
       emailPlaceholder: "deine@email.de", emailBtn: "Benachrichtigen",
       emailSuccess: "Du bist dabei! Wir melden uns bald. 🎉",
@@ -524,7 +525,7 @@ export default function App() {
         </motion.h1>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
-          style={{ fontSize: "clamp(13px,1.8vw,16px)", color: "#666", maxWidth: 480, lineHeight: 1.6, position: "relative", zIndex: 2, marginBottom: 24 }}>
+          style={{ fontSize: "clamp(13px,1.8vw,16px)", color: "#666", maxWidth: 800, lineHeight: 1.6, position: "relative", zIndex: 2, marginBottom: 24 }}>
           {t.hero.sub}
         </motion.p>
 
@@ -579,6 +580,39 @@ export default function App() {
 
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}
           style={{ position: "absolute", bottom: 32, fontSize: 20, color: C.blush, zIndex: 2 }}>↓</motion.div>
+      </section>
+
+      {/* Trust Banner */}
+      <section id="trusted" className="trust-banner">
+        <div className="trust-banner__container">
+          <p className="trust-banner__label">
+            {lang === "de"
+              ? "Wissenschaftlich fundiert. Mit Expert:innen entwickelt"
+              : "Science-based. Trusted by educators."}
+          </p>
+          <div className="trust-banner__logos">
+            <img
+              src="/Logo_Hochschule_Kempten.svg.png"
+              alt="Hochschule Kempten"
+              className="trust-banner__logo"
+            />
+            <img
+              src="/EXIST logo-exist.jpg"
+              alt="EXIST"
+              className="trust-banner__logo trust-banner__logo--medium"
+            />
+            <img
+              src="/allgau digital.jpg"
+              alt="Allgäu Digital"
+              className="trust-banner__logo trust-banner__logo--square"
+            />
+            <img
+              src="/Technische_Hochschule_Augsburg_2025_logo.svg.png"
+              alt="TH Augsburg"
+              className="trust-banner__logo"
+            />
+          </div>
+        </div>
       </section>
 
       {/* ABOUT */}
