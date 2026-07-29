@@ -64,7 +64,7 @@ const T = {
     langBtn: "DE",
     hero: {
       badge: "Coming Soon",
-      h1: "Sex ed that", h2: "actually speaks", h3: "your language.",
+      h1: "Watch. Learn. Enjoy", h2: "Real Intimacy",
       sub: "Edutainment. AI Coaching. Anonymous Community. All in one place — for Gen Z and schools.",
       emailLabel: "Be the first to know when we launch",
       emailPlaceholder: "your@email.com", emailBtn: "Notify me",
@@ -594,11 +594,6 @@ export default function App() {
               src="/Logo_Hochschule_Kempten.svg.png"
               alt="Hochschule Kempten"
               className="trust-banner__logo"
-            />
-            <img
-              src="/EXIST logo-exist.jpg"
-              alt="EXIST"
-              className="trust-banner__logo trust-banner__logo--medium"
             />
             <img
               src="/allgau digital.jpg"
