@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the Eltern subpage when visiting /parents', () => {
+  window.history.pushState({}, '', '/parents');
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // heading should exist (avoids matching the nav button)
+  expect(screen.getByRole('heading', { name: /Für Eltern/i })).toBeInTheDocument();
+  expect(screen.getByText(/Mit Insides sprechen Jugendliche über Liebe, Beziehungen und Gesundheit/i)).toBeInTheDocument();
 });

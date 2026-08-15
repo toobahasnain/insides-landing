@@ -14,22 +14,21 @@ const T = {
     langBtn: "EN",
     hero: {
       badge: "Demnächst verfügbar",
-      h1: "Watch. Learn. Enjoy", h2: "Real Intimacy",
+      h1: "Beobachten. Lernen.", h2: "Wahre Intimität genießen.",
       sub: "Streame realistische Storys über Liebe, Beziehungen und Sexualität. Lerne aus den Erfahrungen anderer und teile deine eigenen. Nutze unseren KI-Coach, um deine Beziehungen und Intimität besser zu verstehen.",
       emailLabel: "Sei unter den Ersten, wenn wir starten",
       emailPlaceholder: "deine@email.de", emailBtn: "Benachrichtigen",
       emailSuccess: "Du bist dabei! Wir melden uns bald. 🎉",
     },
     about: {
-      label: "Über Insides", headline: "Wir schließen die Lücke zwischen Schule und Realität",
-      text1: "Sexualaufklärung in Deutschland ist oft veraltet, unvollständig und weit entfernt von der Lebensrealität junger Menschen. TikTok und YouTube füllen diese Lücke — oft mit falschen Informationen.",
-      text2: "Insides verbindet evidenzbasierte Gesundheitsbildung mit dem Edutainment-Format, das Gen Z wirklich nutzt. Unsere KI-gestützte Plattform bietet realistische Serien, eine anonyme Community und einen persönlichen KI-Coach.",
-      text3: "Entwickelt von einem Team aus Gesundheit, Technologie und Bildung — in enger Zusammenarbeit mit Schulen in Bayern.",
-      s1n: "4", s1l: "Gründerinnen", s2n: "3", s2l: "Kernfeatures", s3n: "WHO", s3l: "Standards", s4n: "DSGVO", s4l: "Konform",
+      label: "Wir bieten", headline: "Gesunde mediale Vorbilder für Beziehungen und Sexualität",
+      text1: "Digitale Lebenswelten prägen, wie Jugendliche und junge Erwachsene über Sexualität, Beziehungen und den eigenen Körper denken. Wo klassische Sexualaufklärung nicht ausreichen, werden Social Media und pornografische Inhalte zu wichtigen Informationsquellen – oft verbunden mit Fehlinformationen, unrealistischen Darstellungen und problematischen Vorbildern.",
+      text2: "Insides schafft einen gesundheitsförderlichen Gegenentwurf. Wir verbinden wissenschaftlich fundiertes Wissen mit realitätsnahen narrativen Serien. Die Serien machen respektvolle Beziehungen, Konsens, Kommunikation und sexuelle Selbstbestimmung erlebbar. Eine anonyme Community und ein persönlicher KI-Coach bieten jungen Menschen zusätzlich Raum für Fragen, Austausch und Reflexion.",
+      text3: "Entwickelt wird Insides von einem interdisziplinären Team und in Zusammenarbeit mit jungen Menschen, Schulen und Einrichtungen der Jugendhilfe.",
     },
     features: {
       label: "Was wir bauen", headline: "Bildung trifft Unterhaltung Drei Wege, über Sexualität und Beziehung zu lernen.",
-      f1t: "Edutainment-Serie", f1d: "Realistische, nachvollziehbare Geschichten über Beziehungen und Intimität — in Formaten, die Gen Z wirklich schaut. Keine trockene Theorie, sondern echtes Leben.",
+      f1t: "Narrative Bildungsserien", f1d: "Realistische, nachvollziehbare Geschichten über Beziehungen und Intimität — in Formaten, die Junge Menschen wirklich schaut. Keine trockene Theorie, sondern echtes Leben.",
       f2t: "Anonyme Community", f2d: "Teile und tausche Erfahrungen mit Gleichaltrigen — vollständig anonym und ohne Urteile. Ein sicherer Raum für echte Gespräche.",
       f3t: "KI-Coach", f3d: "Stell deine privatesten Fragen oder reflektiere persönliche Erlebnisse mit einem einfühlsamen KI-Coach. Rund um die Uhr verfügbar — evidenzbasiert und sicher.",
     },
@@ -64,22 +63,21 @@ const T = {
     langBtn: "DE",
     hero: {
       badge: "Coming Soon",
-      h1: "Watch. Learn. Enjoy", h2: "Real Intimacy",
-      sub: "Edutainment. AI Coaching. Anonymous Community. All in one place — for Gen Z and schools.",
+      h1: "Observe. Learn.", h2: "Enjoy True Intimacy",
+      sub: "Stream realistic stories about love, relationships and sexuality. Learn from other people’s experiences and share your own. Use our AI coach to gain a better understanding of your relationships and intimacy.",
       emailLabel: "Be the first to know when we launch",
       emailPlaceholder: "your@email.com", emailBtn: "Notify me",
       emailSuccess: "You're on the list! We'll be in touch soon. 🎉",
     },
     about: {
-      label: "About Insides", headline: "We bridge the gap between school and real life",
-      text1: "Sex education in Germany is often outdated, incomplete, and far from the lived reality of young people. TikTok and YouTube fill this gap — often with misinformation.",
-      text2: "Insides combines evidence-based health education with the edutainment format Gen Z actually uses. Our AI-powered platform offers realistic series, an anonymous community, and a personal AI coach.",
-      text3: "Built by a team from health, technology and education — in close collaboration with schools in Bavaria.",
-      s1n: "4", s1l: "Founders", s2n: "3", s2l: "Core Features", s3n: "WHO", s3l: "Standards", s4n: "GDPR", s4l: "Compliant",
+      label: "We Offer", headline: "Healthy role models in the media for relationships and sexuality",
+      text1: "Digital environments shape the way teenagers and young adults think about sexuality, relationships and their own bodies. Where traditional sex education falls short, social media and pornographic content become key sources of information – often accompanied by misinformation, unrealistic portrayals and problematic role models.",
+      text2: "Insides offers a health-promoting alternative. We combine scientifically sound knowledge with realistic narrative series. The series bring to life respectful relationships, consensus, communication and sexual self-determination. An anonymous community and a personal AI coach also provide young people with a space for asking questions, sharing experiences and reflecting.",
+      text3: "Insides is being developed by an interdisciplinary team in collaboration with young people, schools and youth support organisations.",
     },
     features: {
       label: "What we're building", headline: "Education meets entertainment", sub: "Three ways to experience real sex education",
-      f1t: "Edutainment Series", f1d: "Realistic, relatable stories about relationships and intimacy — told in formats Gen Z actually watches. No dry theory, just real life.",
+      f1t: "Narrative Educational Series", f1d: "Realistic, relatable stories about relationships and intimacy — told in formats young people actually watches. No dry theory, just real life.",
       f2t: "Anonymous Community", f2d: "Share and exchange experiences with peers — fully anonymously and without judgment. A safe space for real conversations.",
       f3t: "AI Coach", f3d: "Ask your most private questions or reflect on personal experiences with an empathetic AI coach. Available 24/7 — evidence-based and safe.",
     },
@@ -260,11 +258,7 @@ function AboutMockup({ lang }) {
     <div style={{ position: "relative", width: 340, height: 360 }}>
       {/* background card */}
       <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.05)", borderRadius: 28, border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(8px)" }} />
-      {/* who we are label */}
-      <div style={{ position: "absolute", top: 24, left: 24, right: 24 }}>
-        <p style={{ fontSize: 11, letterSpacing: 3, color: C.pale, textTransform: "uppercase", marginBottom: 8 }}>{lang === "de" ? "Wer wir sind" : "Who we are"}</p>
-        <div style={{ width: 40, height: 2, background: C.blush, borderRadius: 2 }} />
-      </div>
+      {/* label removed as requested */}
       {/* avatar row */}
       <div style={{ position: "absolute", top: 80, left: 24, right: 24, display: "flex", gap: 12, justifyContent: "center" }}>
         {members.map((m, i) => (
@@ -621,16 +615,9 @@ export default function App() {
                 <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>{t.about.text1}</p>
                 <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>{t.about.text2}</p>
                 <p style={{ color: C.blush, fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>{t.about.text3}</p>
-                <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                  {(lang === "de" ? ["WHO-Standards", "DSGVO", "BZgA"] : ["WHO Standards", "GDPR", "BZgA"]).map((tag, i) => (
-                    <span key={i} style={{ fontSize: 12, color: C.pale, border: "1px solid rgba(255,255,242,0.25)", borderRadius: 50, padding: "5px 14px", letterSpacing: 1 }}>{tag}</span>
-                  ))}
-                </div>
+                {/* tag badges removed */}
               </div>
-              {/* RIGHT — team mockup illustration */}
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <AboutMockup lang={lang} />
-              </div>
+              {/* RIGHT — team mockup illustration removed */}
             </div>
           </FadeIn>
         </div>
