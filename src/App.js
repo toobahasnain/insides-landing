@@ -244,53 +244,7 @@ function CommunityMockup({ lang = "de" }) {
     </motion.div>
   );
 }
-
-
-// ── ABOUT MOCKUP — team illustration ─────────────────────
-function AboutMockup({ lang }) {
-  const members = [
-    { init: "AM", color: "#2667BB", name: "Anne", role: lang === "de" ? "Impact & Finanzen" : "Impact & Finance" },
-    { init: "JC", color: "#257C42", name: "Jil", role: lang === "de" ? "Produkt & Content" : "Product & Content" },
-    { init: "IA", color: "#8E7BAD", name: "Ifrah", role: lang === "de" ? "UI/UX Design" : "UI/UX Design" },
-    { init: "ST", color: "#c06b8a", name: "Tooba", role: lang === "de" ? "Technologie & KI" : "Technology & AI" },
-  ];
-  return (
-    <div style={{ position: "relative", width: 340, height: 360 }}>
-      {/* background card */}
-      <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.05)", borderRadius: 28, border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(8px)" }} />
-      {/* label removed as requested */}
-      {/* avatar row */}
-      <div style={{ position: "absolute", top: 80, left: 24, right: 24, display: "flex", gap: 12, justifyContent: "center" }}>
-        {members.map((m, i) => (
-          <motion.div key={i}
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 3 + i * 0.4, repeat: Infinity, delay: i * 0.5, ease: "easeInOut" }}
-            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-            <div style={{ width: 52, height: 52, borderRadius: "50%", background: m.color, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Champ', sans-serif", fontSize: 16, color: "white", border: "2px solid rgba(255,255,255,0.15)", boxShadow: "0 8px 20px rgba(0,0,0,0.3)" }}>{m.init}</div>
-            <div style={{ textAlign: "center" }}>
-              <div style={{ color: "white", fontSize: 11, fontWeight: 600 }}>{m.name}</div>
-              <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 9, marginTop: 2, letterSpacing: 0.5 }}>{m.role}</div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-      {/* bottom quote card */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
-        style={{ position: "absolute", bottom: 24, left: 24, right: 24, background: "rgba(255,255,255,0.08)", borderRadius: 16, padding: "16px 18px", border: "1px solid rgba(255,255,255,0.1)" }}>
-        <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 12.5, lineHeight: 1.6, margin: 0, fontStyle: "italic" }}>
-          {lang === "de"
-            ? '"Insides macht Sexualbildung ehrlich, zugänglich und relevant für Gen Z."'
-            : '"Insides makes sex education honest, accessible and relevant for Gen Z."'}
-        </p>
-        <p style={{ color: C.blush, fontSize: 11, marginTop: 8 }}>— Sarah M., COO</p>
-      </motion.div>
-    </div>
-  );
-}
+// AboutMockup component removed — mockup intentionally omitted from About section
 
 // ── FEATURES TAB SECTION ──────────────────────────────────
 function FeaturesTabSection({ t, lang }) {
