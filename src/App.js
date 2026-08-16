@@ -14,7 +14,7 @@ const T = {
     langBtn: "EN",
     hero: {
       badge: "Demnächst verfügbar",
-      h1: "Zuschauen. Lernen.", h2: "Erleben Sie realistische Intimität",
+      h1: "Zuschauen. Lernen. Erleben", h2: "Realistische Intimität",
       sub: "Streame realistische Storys über Liebe, Beziehungen und Sexualität. Lerne aus den Erfahrungen anderer und teile deine eigenen. Nutze unseren KI-Coach, um deine Beziehungen und Intimität besser zu verstehen.",
       emailLabel: "Sei unter den Ersten, wenn wir starten",
       emailPlaceholder: "deine@email.de", emailBtn: "Benachrichtigen",
@@ -63,7 +63,7 @@ const T = {
     langBtn: "DE",
     hero: {
       badge: "Coming Soon",
-      h1: "Watch. Learn.", h2: "Enjoy Realistic Intimacy",
+      h1: "Watch. Learn. Enjoy", h2: "Realistic Intimacy",
       sub: "Stream realistic stories about love, relationships and sexuality. Learn from other people’s experiences and share your own. Use our AI coach to gain a better understanding of your relationships and intimacy.",
       emailLabel: "Be the first to know when we launch",
       emailPlaceholder: "your@email.com", emailBtn: "Notify me",
@@ -569,7 +569,53 @@ export default function App() {
                 <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>{t.about.text1}</p>
                 <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>{t.about.text2}</p>
                 <p style={{ color: C.blush, fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>{t.about.text3}</p>
-                {/* tag badges removed */}
+                {/* Audience Cards (adapted from provided Tailwind markup) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="audience-grid"
+                >
+                  {/* Card 1 */}
+                  <motion.div whileHover={{ y: -6 }} style={{ background: C.pale, color: "black", padding: 28, borderRadius: 24, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                    <div>
+                      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", color: C.blush, marginBottom: 8 }}>{lang === "de" ? "Für Junge Menschen" : "For Young People"}</div>
+                      <h3 style={{ fontSize: 28, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? <>Echter Talk.<br />Ohne Urteil.</> : <>Real talk.<br />No judgement.</>}</h3>
+                      <p style={{ color: "rgb(66, 54, 32)", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "Fragen zu Beziehungen, Identität, Konsens oder Lust? Schluss mit toxischen Social-Media-Trends und unrealistischen Erwartungen. Insides bietet dir einen vollständig anonymen, moderierten Raum – mit nachvollziehbaren Charakteren, Peer-Austausch und privater KI-Begleitung." : "Questions about relationships, identity, consent or desire? Say goodbye to toxic social-media trends and unrealistic expectations. Insides offers a fully anonymous, moderated space — realistic characters, peer exchange and a private AI companion."}</p>
+                    </div>
+                    <a href="/genz" style={{ marginTop: 18, color: C.blush, fontWeight: 700, textDecoration: "none" }}>{lang === "de" ? "Zur Plattform →" : "Visit platform →"}</a>
+                  </motion.div>
+
+                  {/* Card 2 */}
+                  <motion.div whileHover={{ y: -6 }} style={{ background: "rgba(255,255,255,0.06)", color: "white", padding: 28, borderRadius: 24, display: "flex", flexDirection: "column", justifyContent: "space-between", border: "1px solid rgba(255,255,255,0.06)" }}>
+                    <div>
+                      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", color: C.blush, marginBottom: 8 }}>{lang === "de" ? "Für Eltern" : "For Parents"}</div>
+                      <h3 style={{ fontSize: 24, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? "Dein Verbündeter in einer hyperdigitalen Welt." : "Your ally in a hyper-digital world."}</h3>
+                      <p style={{ color: "rgba(255,255,255,0.88)", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "Kinder und Jugendliche haben heutzutage, lange bevor sie diese einordnen können, Zugang zu den unterschiedlichsten digitalen Inhalten. Online fehlen bisher jedoch sichere und fundierte Inhalte. Insides bietet so ein Angebot, um Jugendliche in der Entwicklung ihrer Beziehungskompetenz zu begleiten." : "Children and young people today encounter a wide range of digital content long before they can contextualize it. There is a lack of safe, evidence-based audiovisual content online. Insides offers resources to support young people in developing relationship skills and exploring their sexuality safely."}</p>
+                    </div>
+                    <a href="/parents" style={{ marginTop: 18, color: C.blush, fontWeight: 700, textDecoration: "none" }}>{lang === "de" ? "Wie wir Kinder schützen →" : "How we protect children →"}</a>
+                  </motion.div>
+
+                  {/* Card 3 */}
+                  <motion.div whileHover={{ y: -6 }} style={{ background: C.evergreen, color: "white", padding: 28, borderRadius: 24, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                    <div>
+                      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", marginBottom: 8 }}>{lang === "de" ? "Für Schulen & Lehrkräfte" : "For Schools & Educators"}</div>
+                      <h3 style={{ fontSize: 24, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? "Moderne Medienkompetenz für deinen Unterricht." : "Modern media literacy for your classroom."}</h3>
+                      <p style={{ color: "rgba(255,255,255,0.9)", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "Sexualkundeunterricht ist ein wichtiger Zugang für Jugendliche zu Wissen über Sexualität. Wir helfen Lehrkräften, ihre Schüler:innen wirklich zu erreichen. Insides ist dein digitaler pädagogischer Assistent." : "Sex education is an important channel for young people to learn about sexuality. We support teachers in reaching students effectively — Insides acts as your digital pedagogical assistant."}</p>
+                    </div>
+                    <a href="/educators" style={{ marginTop: 18, color: "white", fontWeight: 700, textDecoration: "underline" }}>{lang === "de" ? "Demo für Institutionen anfragen →" : "Request an institutional demo →"}</a>
+                  </motion.div>
+
+                  {/* Card 4 */}
+                  <motion.div whileHover={{ y: -6 }} style={{ background: "white", color: C.midnight, padding: 28, borderRadius: 24, display: "flex", flexDirection: "column", justifyContent: "space-between", border: "1px solid rgba(38,103,187,0.06)" }}>
+                    <div>
+                      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", color: C.midnight, marginBottom: 8 }}>{lang === "de" ? "Für Investor:innen" : "For Investors"}</div>
+                      <h3 style={{ fontSize: 24, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? "Skalierbare Wirkung an der Schnittstelle von EdTech & Digital Health." : "Scalable impact at the intersection of EdTech & Digital Health."}</h3>
+                      <p style={{ color: "#333", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "„Insides“ befasst sich mit einem gravierenden, systemischen Marktversagen zwischen privaten Online-Recherchen und der institutionellen Bildung. Unser SaaS-Modell sorgt für margenstarkes Wachstum und trägt zur Lösung eines globalen Public-Health-Problems bei." : "Insides addresses a major systemic market failure between private online research and institutional education. Our layered SaaS model delivers margin-strong growth while contributing to a global public-health solution."}</p>
+                    </div>
+                    <a href="/investors" style={{ marginTop: 18, color: C.midnight, fontWeight: 700, textDecoration: "none" }}>{lang === "de" ? "Investor Relations →" : "Investor relations →"}</a>
+                  </motion.div>
+                </motion.div>
               </div>
               {/* RIGHT — team mockup illustration removed */}
             </div>
@@ -625,6 +671,10 @@ export default function App() {
         @media(max-width:768px){
           .desk-nav{display:none!important}
           .hamburger{display:block!important}
+        }
+        .audience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:24px}
+        @media(max-width:768px){
+          .audience-grid{grid-template-columns:1fr}
         }
       `}</style>
     </div>
