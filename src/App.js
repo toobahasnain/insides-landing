@@ -15,7 +15,7 @@ const T = {
     hero: {
       badge: "Demnächst verfügbar",
       h1: "Zuschauen. Lernen. Erleben", h2: "Realistische Intimität",
-      sub: "Streame realistische Storys über Liebe, Beziehungen und Sexualität. Lerne aus den Erfahrungen anderer und teile deine eigenen. Nutze unseren KI-Coach, um deine Beziehungen und Intimität besser zu verstehen.",
+      sub: "Streame realistische Storys über Liebe, Beziehungen und Sexualität. Lerne aus den Erfahrungen anderer und teile deine eigenen.",
       emailLabel: "Sei unter den Ersten, wenn wir starten",
       emailPlaceholder: "deine@email.de", emailBtn: "Benachrichtigen",
       emailSuccess: "Du bist dabei! Wir melden uns bald. 🎉",
@@ -64,7 +64,7 @@ const T = {
     hero: {
       badge: "Coming Soon",
       h1: "Watch. Learn. Enjoy", h2: "Realistic Intimacy",
-      sub: "Stream realistic stories about love, relationships and sexuality. Learn from other people’s experiences and share your own. Use our AI coach to gain a better understanding of your relationships and intimacy.",
+      sub: "Stream realistic stories about love, relationships and sexuality. Learn from other people’s experiences and share your own.",
       emailLabel: "Be the first to know when we launch",
       emailPlaceholder: "your@email.com", emailBtn: "Notify me",
       emailSuccess: "You're on the list! We'll be in touch soon. 🎉",
