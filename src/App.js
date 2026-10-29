@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./App.css";
 import "./fonts.css";
@@ -27,10 +27,9 @@ const T = {
       text3: "Entwickelt wird Insides von einem interdisziplinären Team und in Zusammenarbeit mit jungen Menschen, Schulen und Einrichtungen der Jugendhilfe.",
     },
     features: {
-      label: "Was wir bauen", headline: "Bildung trifft Unterhaltung Drei Wege, über Sexualität und Beziehung zu lernen.",
+      label: "Was wir bauen", headline: "Bildung trifft Unterhaltung", sub: "Zwei Wege, über Sexualität und Beziehung zu lernen.",
       f1t: "Narrative Bildungsserien", f1d: "Realistische, nachvollziehbare Geschichten über Beziehungen und Intimität — in Formaten, die Junge Menschen wirklich schaut. Keine trockene Theorie, sondern echtes Leben.",
       f2t: "Anonyme Community", f2d: "Teile und tausche Erfahrungen mit Gleichaltrigen — vollständig anonym und ohne Urteile. Ein sicherer Raum für echte Gespräche.",
-      f3t: "KI-Coach", f3d: "Stell deine privatesten Fragen oder reflektiere persönliche Erlebnisse mit einem einfühlsamen KI-Coach. Rund um die Uhr verfügbar — evidenzbasiert und sicher.",
     },
     team: {
       label: "Das Team", headline: "Vier Gründerinnen. Eine Vision.",
@@ -76,10 +75,9 @@ const T = {
       text3: "Insides is being developed by an interdisciplinary team in collaboration with young people, schools and youth support organisations.",
     },
     features: {
-      label: "What we're building", headline: "Education meets entertainment", sub: "Three ways to experience real sex education",
+      label: "What we're building", headline: "Education meets entertainment", sub: "Two ways to experience real sex education",
       f1t: "Narrative Educational Series", f1d: "Realistic, relatable stories about relationships and intimacy — told in formats young people actually watches. No dry theory, just real life.",
       f2t: "Anonymous Community", f2d: "Share and exchange experiences with peers — fully anonymously and without judgment. A safe space for real conversations.",
-      f3t: "AI Coach", f3d: "Ask your most private questions or reflect on personal experiences with an empathetic AI coach. Available 24/7 — evidence-based and safe.",
     },
     team: {
       label: "The Team", headline: "Four founders. One vision.",
@@ -127,56 +125,6 @@ function FadeIn({ children, delay = 0, y = 40, style = {} }) {
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay }} style={style}>
       {children}
-    </motion.div>
-  );
-}
-
-// ── PHONE MOCKUP ──────────────────────────────────────────
-function PhoneMockup({ lang = "de" }) {
-  const [msgIdx, setMsgIdx] = useState(0);
-  const msgs = lang === "de" ? [
-    { from: "user", text: "Ich fühle mich oft unsicher in Beziehungen..." },
-    { from: "bot", text: "Das ist völlig normal. Viele fühlen so. Lass uns darüber sprechen 💙" },
-    { from: "user", text: "Wirklich? Wie kann ich damit umgehen?" },
-    { from: "bot", text: "Hier sind Ansätze, die wirklich helfen können..." },
-  ] : [
-    { from: "user", text: "I often feel insecure in relationships..." },
-    { from: "bot", text: "That's completely normal. Many people feel this way 💙" },
-    { from: "user", text: "Really? How can I deal with it?" },
-    { from: "bot", text: "Here are some approaches that can really help..." },
-  ];
-  useEffect(() => {
-    const t = setInterval(() => setMsgIdx(m => (m + 1) % msgs.length), 2200);
-    return () => clearInterval(t);
-  }, [msgs.length]); // eslint-disable-line react-hooks/exhaustive-deps
-  return (
-    <motion.div
-      animate={{ y: [0, -12, 0], rotateY: [0, 4, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      style={{ width: 220, height: 420, background: "linear-gradient(160deg,#1a1a2e 0%,#2667BB 100%)", borderRadius: 32, border: "5px solid rgba(255,255,255,0.1)", boxShadow: "0 40px 80px rgba(38,103,187,0.35)", display: "flex", flexDirection: "column", overflow: "hidden" }}
-    >
-      <div style={{ width: 70, height: 18, background: "#0d0d1a", borderRadius: "0 0 12px 12px", margin: "0 auto" }} />
-      <div style={{ padding: "10px 14px", display: "flex", alignItems: "center", gap: 8 }}>
-        <div style={{ width: 30, height: 30, borderRadius: "50%", background: C.blush, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>🤖</div>
-        <div>
-          <div style={{ color: "white", fontSize: 12, fontWeight: 600 }}>Insides Coach</div>
-          <div style={{ color: C.pale, fontSize: 9, opacity: 0.7 }}>● Online</div>
-        </div>
-      </div>
-      <div style={{ flex: 1, padding: "8px 12px", display: "flex", flexDirection: "column", gap: 8, justifyContent: "flex-end" }}>
-        <AnimatePresence mode="popLayout">
-          {msgs.slice(0, msgIdx + 1).map((m, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 14, scale: 0.92 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.35 }}
-              style={{ alignSelf: m.from === "user" ? "flex-end" : "flex-start", background: m.from === "user" ? C.violet : "rgba(255,255,255,0.12)", color: "white", borderRadius: m.from === "user" ? "14px 14px 3px 14px" : "14px 14px 14px 3px", padding: "7px 11px", fontSize: 10.5, maxWidth: "85%", lineHeight: 1.5 }}>
-              {m.text}
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </div>
-      <div style={{ padding: "10px 12px", background: "rgba(0,0,0,0.3)", display: "flex", gap: 8, alignItems: "center" }}>
-        <div style={{ flex: 1, background: "rgba(255,255,255,0.08)", borderRadius: 18, padding: "6px 11px", fontSize: 10, color: "rgba(255,255,255,0.4)" }}>{lang === "de" ? "Schreib etwas..." : "Write something..."}</div>
-        <div style={{ width: 26, height: 26, borderRadius: "50%", background: C.midnight, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11 }}>➤</div>
-      </div>
     </motion.div>
   );
 }
@@ -261,12 +209,6 @@ function FeaturesTabSection({ t, lang }) {
       title: t.features.f2t, desc: t.features.f2d,
       mockup: <CommunityMockup lang={lang} />,
       color: C.evergreen, accent: C.pale,
-    },
-    {
-      key: "coach", label: lang === "de" ? "🤖 KI-Coach" : "🤖 AI Coach",
-      title: t.features.f3t, desc: t.features.f3d,
-      mockup: <PhoneMockup lang={lang} />,
-      color: C.citrus, accent: C.violet,
     },
   ];
   const tab = tabs[active];
