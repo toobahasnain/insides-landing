@@ -544,11 +544,6 @@ export default function App() {
               className="trust-banner__logo"
             />
             <img
-              src="/allgau digital.jpg"
-              alt="Allgäu Digital"
-              className="trust-banner__logo trust-banner__logo--square"
-            />
-            <img
               src="/Technische_Hochschule_Augsburg_2025_logo.svg.png"
               alt="TH Augsburg"
               className="trust-banner__logo"
