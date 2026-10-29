@@ -587,15 +587,43 @@ export default function App() {
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             {[
               { label: t.contact.email, href: "mailto:Info@insides-official.com", icon: "✉️" },
-              { label: t.contact.linkedin, href: "https://www.linkedin.com/company/insides-by-intimate-insights/", icon: "💼" },
+              { label: t.contact.linkedin, href: "https://www.linkedin.com/company/insides-by-intimate-insights/", icon: "linkedin" },
+              { label: "@insides_official", href: "https://www.instagram.com/insides_official/", icon: "instagram" },
+              { label: "@insides_fuer_eltern", href: "https://www.instagram.com/insides_fuer_eltern/", icon: "instagram" },
             ].map((l, i) => (
               <motion.a key={i} href={l.href} target="_blank" rel="noreferrer"
                 whileHover={{ scale: 1.04, background: C.blush, borderColor: C.blush, color: C.midnight }}
                 style={{ display: "flex", alignItems: "center", gap: 10, background: "rgba(255,255,255,0.1)", color: "white", borderRadius: 50, padding: "13px 26px", textDecoration: "none", fontSize: 15, border: "1.5px solid rgba(255,255,255,0.15)" }}>
-                <span>{l.icon}</span>{l.label}
+                <span style={{ display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 0 }}>
+                  {l.icon === "linkedin" ? (
+                    <svg aria-hidden="true" viewBox="0 0 24 24" style={{ display: "block", width: 18, height: 18, fill: "#0A66C2" }}>
+                      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.44c.98 0 1.79-.77 1.79-1.72V1.72C24 .77 23.19 0 22.21 0h.01Z" />
+                    </svg>
+                  ) : l.icon === "instagram" ? (
+                    <svg aria-hidden="true" viewBox="0 0 24 24" style={{ display: "block", width: 18, height: 18, fill: "none", stroke: `url(#instagram-gradient-${i})`, strokeWidth: 2 }}>
+                      <defs>
+                        <linearGradient id={`instagram-gradient-${i}`} x1="0%" y1="100%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#FFDC80" />
+                          <stop offset="50%" stopColor="#F56040" />
+                          <stop offset="100%" stopColor="#C13584" />
+                        </linearGradient>
+                      </defs>
+                      <rect x="3" y="3" width="18" height="18" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="18" cy="6" r="1" style={{ fill: "#C13584", stroke: "none" }} />
+                    </svg>
+                  ) : l.icon}
+                </span>
+                {l.label}
               </motion.a>
             ))}
           </div>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 14, lineHeight: 1.8, margin: "24px 0 0" }}>
+            {lang === "de" ? "Oder ruf uns einfach an unter " : "Or simply call us on "}
+            <a href="tel:+491796865673" style={{ color: "white", textDecoration: "underline", textUnderlineOffset: 3 }}>+49 179 6865673</a>
+            {lang === "de" ? " oder schreib uns eine E-Mail an " : " or email us at "}
+            <a href="mailto:hermann.anne-maria@web.de" style={{ color: "white", textDecoration: "underline", textUnderlineOffset: 3 }}>hermann.anne-maria@web.de</a>
+          </p>
         </FadeIn>
       </section>
 
