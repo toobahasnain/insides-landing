@@ -26,10 +26,71 @@ const T = {
       text2: "Insides schafft einen gesundheitsförderlichen Gegenentwurf. Wir verbinden wissenschaftlich fundiertes Wissen mit realitätsnahen narrativen Serien. Die Serien machen respektvolle Beziehungen, Konsens, Kommunikation und sexuelle Selbstbestimmung erlebbar. Eine anonyme Community und ein persönlicher KI-Coach bieten jungen Menschen zusätzlich Raum für Fragen, Austausch und Reflexion.",
       text3: "Entwickelt wird Insides von einem interdisziplinären Team und in Zusammenarbeit mit jungen Menschen, Schulen und Einrichtungen der Jugendhilfe.",
     },
+    evidence: {
+      statistics: [
+        {
+          value: "79 %",
+          description: "der US-Jugendlichen zwischen 13 und 17 Jahren, die bereits Pornografie gesehen hatten, gaben an, daraus gelernt zu haben, wie man Sex hat. Befragung vom September 2022.",
+          source: "Common Sense Media, 2023",
+          href: "https://www.commonsensemedia.org/sites/default/files/research/report/2022-teens-and-pornography-final-web.pdf",
+        },
+        {
+          value: "45 %",
+          description: "der untersuchten Szenen auf Pornhub enthielten mindestens eine Form körperlicher Aggression. Analysiert wurden 4.009 heterosexuelle Szenen von Pornhub und Xvideos.",
+          source: "Fritz et al., 2020",
+          href: "https://pubmed.ncbi.nlm.nih.gov/32661813/",
+        },
+        {
+          value: "15 %",
+          description: "der in Deutschland lebenden 8- bis 17-Jährigen gaben 2025 an, online schon einmal von einer erwachsenen Person zu einem Treffen im echten Leben aufgefordert worden zu sein.",
+          source: "Landesanstalt für Medien NRW, 2025",
+          href: "https://www.medienanstalt-nrw.de/fileadmin/user_upload/Forschung/Cybergrooming/LFM_Cybergrooming_Studie_Mai_2025.pdf",
+        },
+        {
+          value: "Mindestens 1,2 Millionen",
+          description: "internetnutzende Kinder zwischen 12 und 17 Jahren in 11 Ländern gaben an, dass ihre Bilder im vergangenen Jahr zu sexuell expliziten Deepfakes manipuliert wurden.",
+          source: "UNICEF, ECPAT und INTERPOL, 2026",
+          href: "https://www.unicef.org/press-releases/deepfake-abuse-is-abuse",
+        },
+      ],
+      answerHeading: "Unsere Antwort: Orientierung statt Sprachlosigkeit",
+      answerParagraphs: [
+        "Insides entwickelt mediale Bildungsangebote, die Wissen mit Geschichten und positiven Vorbildern verbinden. Realistische Erzählformate sollen junge Menschen dabei unterstützen, über Beziehungen, Konsens, Kommunikation und sexuelle Selbstbestimmung nachzudenken.",
+        "Für Eltern entwickeln wir außerdem einen Onlinekurs, der dabei helfen soll, altersgerechte und respektvolle Gespräche über Körper, Sexualität, Grenzen und digitale Sicherheit zu führen.",
+      ],
+      featureLabels: ["Narrative Geschichten", "Positive Vorbilder", "Wissen für den Alltag", "Unterstützung für Eltern"],
+      button: "Kontakt aufnehmen",
+      imageAlt: "Die Insides-Mitgründerinnen Anne und Jil sitzen nebeneinander.",
+    },
     features: {
       label: "Was wir bauen", headline: "Bildung trifft Unterhaltung", sub: "Zwei Wege, über Sexualität und Beziehung zu lernen.",
       f1t: "Narrative Bildungsserien", f1d: "Realistische, nachvollziehbare Geschichten über Beziehungen und Intimität — in Formaten, die Junge Menschen wirklich schaut. Keine trockene Theorie, sondern echtes Leben.",
       f2t: "Anonyme Community", f2d: "Teile und tausche Erfahrungen mit Gleichaltrigen — vollständig anonym und ohne Urteile. Ein sicherer Raum für echte Gespräche.",
+    },
+    testimonials: {
+      headline: "Was Teilnehmende sagen",
+      label: "Rückmeldungen zum Konzept",
+      sub: "Auszüge aus unserer Umfrage",
+      pause: "Automatisches Abspielen pausieren",
+      play: "Automatisches Abspielen fortsetzen",
+      responses: [
+        {
+          quote: "Vor allem für junge Menschen ist es manchmal schwierig sich (ohne scham) zu informieren über Sex etc.; viele Jugendliche haben ihre „Erfahrung“ von pornos, was einfach nicht die Realität widerspiegelt",
+          attribution: "Anonyme:r Umfrageteilnehmer:in",
+        },
+        {
+          quote: "Ich hätte gerne früher gewusst, dass Porno Sex nicht so viel mit realem Sex zu tun hat und dass es extrem wichtig ist während dem Sex miteinander zu kommunizieren.",
+          attribution: "Anonyme:r Umfrageteilnehmer:in",
+        },
+        {
+          quote: "Sicherheit für Kind und Eltern. Sowie Förderung der Selbstwirksamkeit bei Kindern, da nicht unter ständiger Kontrolle der Eltern.",
+          attribution: "Anonyme:r Elternteil aus der Umfrage",
+        },
+        {
+          quote: "Aufklärung und Sensibilisierung - müsste aber ggf. spielerisch sein, damit die App auch verwendet wird. Was zieht die Jugendlichen an, diese zu nutzen/öffnen, wenn sie selbst den Bedarf nicht erkennen?",
+          attribution: "Anonyme:r Elternteil aus der Umfrage",
+        },
+      ],
     },
     team: {
       label: "Das Team", headline: "Drei Gründerinnen. Eine Vision.",
@@ -77,10 +138,71 @@ const T = {
       text2: "Insides offers a health-promoting alternative. We combine scientifically sound knowledge with realistic narrative series. The series bring to life respectful relationships, consensus, communication and sexual self-determination. An anonymous community and a personal AI coach also provide young people with a space for asking questions, sharing experiences and reflecting.",
       text3: "Insides is being developed by an interdisciplinary team in collaboration with young people, schools and youth support organisations.",
     },
+    evidence: {
+      statistics: [
+        {
+          value: "79 %",
+          description: "of U.S. teens aged 13–17 who had ever viewed pornography said they had learned how to have sex from it. Survey conducted in September 2022.",
+          source: "Common Sense Media, 2023",
+          href: "https://www.commonsensemedia.org/sites/default/files/research/report/2022-teens-and-pornography-final-web.pdf",
+        },
+        {
+          value: "45 %",
+          description: "of the scenes analyzed on Pornhub included at least one act of physical aggression. The study analyzed 4,009 heterosexual scenes from Pornhub and Xvideos.",
+          source: "Fritz et al., 2020",
+          href: "https://pubmed.ncbi.nlm.nih.gov/32661813/",
+        },
+        {
+          value: "15 %",
+          description: "of children and young people aged 8–17 living in Germany said in 2025 that an adult they had met online had asked to meet them in person.",
+          source: "Landesanstalt für Medien NRW, 2025",
+          href: "https://www.medienanstalt-nrw.de/fileadmin/user_upload/Forschung/Cybergrooming/LFM_Cybergrooming_Studie_Mai_2025.pdf",
+        },
+        {
+          value: "At least 1.2 million",
+          description: "internet-using children aged 12–17 across 11 countries disclosed that their images had been manipulated into sexually explicit deepfakes in the past year.",
+          source: "UNICEF, ECPAT and INTERPOL, 2026",
+          href: "https://www.unicef.org/press-releases/deepfake-abuse-is-abuse",
+        },
+      ],
+      answerHeading: "Our response: Guidance instead of silence",
+      answerParagraphs: [
+        "Insides develops educational media that combines knowledge with stories and positive role models. Realistic storytelling is designed to help young people reflect on relationships, consent, communication and sexual self-determination.",
+        "For parents, we are also developing an online course to help them have age-appropriate, respectful conversations about bodies, sexuality, boundaries and digital safety.",
+      ],
+      featureLabels: ["Narrative stories", "Positive role models", "Everyday knowledge", "Support for parents"],
+      button: "Get in touch",
+      imageAlt: "Insides co-founders Anne and Jil sitting side by side.",
+    },
     features: {
       label: "What we're building", headline: "Education meets entertainment", sub: "Two ways to experience real sex education",
       f1t: "Narrative Educational Series", f1d: "Realistic, relatable stories about relationships and intimacy — told in formats young people actually watches. No dry theory, just real life.",
       f2t: "Anonymous Community", f2d: "Share and exchange experiences with peers — fully anonymously and without judgment. A safe space for real conversations.",
+    },
+    testimonials: {
+      headline: "What survey respondents say",
+      label: "Feedback on the concept",
+      sub: "Selected responses from our survey",
+      pause: "Pause automatic playback",
+      play: "Resume automatic playback",
+      responses: [
+        {
+          quote: "Especially for young people, it can sometimes be difficult to find information about sex without feeling ashamed. Many young people get their ‘experience’ from pornography, which simply does not reflect reality.",
+          attribution: "Anonymous survey respondent",
+        },
+        {
+          quote: "I wish I had known earlier that sex in pornography has little to do with real sex, and that communicating with each other during sex is extremely important.",
+          attribution: "Anonymous survey respondent",
+        },
+        {
+          quote: "Safety for children and parents, as well as supporting children’s sense of independence, since they are not under constant parental control.",
+          attribution: "Anonymous parent survey respondent",
+        },
+        {
+          quote: "Education and awareness—but it might need to be playful so that the app is actually used. What would attract young people to use or open it if they don’t recognise the need themselves?",
+          attribution: "Anonymous parent survey respondent",
+        },
+      ],
     },
     team: {
       label: "The Team", headline: "Three founders. One vision.",
@@ -606,6 +728,118 @@ const teamImages = [
   { src: "/KANU-Event%20-%20Pitch%20(3).png", alt: { de: "Das Team stellt Insides bei einer Veranstaltung vor", en: "The team presenting Insides at an event" } },
 ];
 
+function TestimonialsSection({ t, lang }) {
+  const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const responses = t.testimonials.responses;
+  const renderResponses = (isDuplicate = false) => responses.map((response, index) => (
+    <figure
+      className="testimonial-card"
+      key={response.quote}
+      role="group"
+      aria-roledescription={lang === "de" ? "Folie" : "slide"}
+      aria-label={lang === "de" ? `${index + 1} von ${responses.length}` : `${index + 1} of ${responses.length}`}
+      aria-hidden={isDuplicate ? "true" : undefined}
+    >
+      <span className="testimonial-quote-mark" aria-hidden="true">“</span>
+      <blockquote className="testimonial-quote">
+        <p>{response.quote}</p>
+      </blockquote>
+      <figcaption className="testimonial-attribution">{response.attribution}</figcaption>
+    </figure>
+  ));
+
+  return (
+    <section
+      id="testimonials"
+      className="testimonials-section"
+      aria-roledescription="carousel"
+      aria-label={lang === "de" ? "Umfrageantworten" : "Survey responses"}
+    >
+      <div className="testimonials-container">
+        <SectionHeader label={t.testimonials.label} headline={t.testimonials.headline} sub={t.testimonials.sub} />
+        <div
+          className={`testimonials-marquee${isPaused || isHovered ? " is-paused" : ""}`}
+          tabIndex={0}
+          aria-label={lang === "de" ? "Laufende Umfrageantworten" : "Continuously scrolling survey responses"}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="testimonials-track">
+            <div className="testimonials-set">
+              {renderResponses()}
+            </div>
+            <div className="testimonials-set" aria-hidden="true">
+              {renderResponses(true)}
+            </div>
+          </div>
+        </div>
+        <div className="testimonials-controls">
+          <button
+            type="button"
+            className="testimonial-play-toggle"
+            onClick={() => setIsPaused(paused => !paused)}
+            aria-pressed={isPaused}
+          >
+            {isPaused ? t.testimonials.play : t.testimonials.pause}
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatisticsAndAnswerSection({ t, lang }) {
+  return (
+    <section className="evidence-section">
+      <div
+        className="statistics-strip"
+        role="group"
+        aria-label={lang === "de" ? "Zahlen und Quellen" : "Statistics and sources"}
+      >
+        {t.evidence.statistics.map(statistic => (
+          <article className="statistic-item" key={statistic.value}>
+            <p className="statistic-value">{statistic.value}</p>
+            <p className="statistic-description">{statistic.description}</p>
+            <a className="statistic-source" href={statistic.href} target="_blank" rel="noreferrer">
+              {statistic.source}
+              <span className="visually-hidden">{lang === "de" ? " (öffnet in neuem Tab)" : " (opens in a new tab)"}</span>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div className="answer-layout">
+        <figure className="answer-image-frame">
+          <img
+            src="/Jil%20and%20Anne.jpeg"
+            alt={t.evidence.imageAlt}
+            className="answer-image"
+            loading="lazy"
+          />
+          <figcaption className="answer-image-caption">
+            {lang === "de" ? "Geschichten, die ins Gespräch bringen." : "Stories that open up conversations."}
+          </figcaption>
+        </figure>
+
+        <div className="answer-content">
+          <p className="answer-eyebrow">{lang === "de" ? "Was Insides möglich macht" : "What Insides makes possible"}</p>
+          <h2>{t.evidence.answerHeading}</h2>
+          {t.evidence.answerParagraphs.map(paragraph => (
+            <p className="answer-paragraph" key={paragraph}>{paragraph}</p>
+          ))}
+          <ul className="answer-feature-list">
+            {t.evidence.featureLabels.map(label => <li key={label}>{label}</li>)}
+          </ul>
+          <a className="answer-contact-button" href="mailto:info@insides-official.com">
+            {t.evidence.button}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TeamSection({ t, lang }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -932,6 +1166,8 @@ export default function App() {
         </div>
       </section>
 
+      <StatisticsAndAnswerSection t={t} lang={lang} />
+
       {/* ABOUT */}
       <section id="about" style={{ padding: "100px 24px", background: C.midnight }}>
         <div style={{ maxWidth: 1060, margin: "0 auto" }}>
@@ -1005,6 +1241,9 @@ export default function App() {
           <FeaturesTabSection t={t} lang={lang} />
         </div>
       </section>
+
+      {/* TESTIMONIALS */}
+      <TestimonialsSection t={t} lang={lang} />
 
       <TeamSection t={t} lang={lang} />
 
