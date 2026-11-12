@@ -290,7 +290,7 @@ const LEGAL_CONTENT = {
         ] },
         { title: "2. Hosting und Bereitstellung der Website", paragraphs: [
           "Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich insbesondere um IP-Adressen, Meta- und Kommunikationsdaten sowie Webseitenzugriffe handeln.",
-          "Hoster: [z. B. Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA / oder Framer B.V.]",
+          "Hoster: Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA ",
           "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren, schnellen und fehlerfreien Bereitstellung unseres Onlineangebots).",
           "Datenübermittlung in Drittstaaten: Soweit Daten außerhalb der EU/des EWR verarbeitet werden, erfolgt dies auf Grundlage von Standardvertragsklauseln (SCC) der EU-Kommission sowie des EU-U.S. Data Privacy Frameworks.",
         ] },
