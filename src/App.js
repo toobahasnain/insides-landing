@@ -93,13 +93,14 @@ const T = {
       ],
     },
     team: {
-      label: "Das Team", headline: "Drei Gründerinnen. Eine Vision.",
+      label: "Das Team", headline: "Vier Gründerinnen. Eine Vision.",
       intro: "Wir sind Mütter, Frauen und Töchter. Unsere Kinder wachsen in einer Welt auf, in der sie Antworten auf sensible Fragen oft zuerst im Netz finden. Wir wollen, dass sie stattdessen in einer Welt groß werden, die sie gut begleitet und in der sie frei mit uns über alles sprechen können.",
       motivation: "Unsere Kinder sind unsere größte Motivation. Wir hören nicht auf, bis jeder junge Mensch Zugang zu guter, ehrlicher Aufklärung hat.",
       profiles: [
-        { name: "Anne", role: "Mitgründerin, Bildung, Inhalte und Strategie. Mutter von zwei Kindern.", quote: "„Als ich schwanger war, habe ich mich gefragt, wie meine Tochter einmal etwas über Körper und Nähe lernen wird. Diese Frage ist mein Antrieb.“" },
-        { name: "Jil", role: "Mitgründerin, Education, Content und Strategy. Mutter von drei Kindern.", quote: "„Kinder fragen, und sie verdienen gute Antworten. Als Mutter von drei Kindern will ich, dass sie diese Antworten von uns bekommen, nicht aus dem Netz.“" },
-        { name: "Ifrah & Tooba", role: "Ifrah, CTO; Tooba, Design, Research und Technologie.", quote: "„Wir entwickeln Technologie, die jungen Menschen Orientierung gibt, bevor falsche Bilder es tun.“" },
+        { name: "Anne", image: "/anne-profile.jpg", email: "hermann.anne-maria@web.de", linkedin: "https://www.linkedin.com/in/anne-miller-hermann-7a35b6249/", role: "Mitgründerin, Bildung, Inhalte und Strategie. Mutter von zwei Kindern.", quote: "„Als ich schwanger war, habe ich mich gefragt, wie meine Tochter einmal etwas über Körper und Nähe lernen wird. Diese Frage ist mein Antrieb.“" },
+        { name: "Jil", image: "/jil-profile.jpg", email: "jil.clausen@web.de", linkedin: "https://www.linkedin.com/in/jil-clausen-925774240/", role: "Mitgründerin, Education, Content und Strategy. Mutter von drei Kindern.", quote: "„Kinder fragen, und sie verdienen gute Antworten. Als Mutter von drei Kindern will ich, dass sie diese Antworten von uns bekommen, nicht aus dem Netz.“" },
+        { name: "Ifrah", image: "/ifrah-profile.png", email: "ifrahasif30@gmail.com", linkedin: "https://www.linkedin.com/in/ifrah-asif-1945b6139/", role: "Design, Research und CTO.", quote: "„Wir möchten ein gesundes Umfeld für alle schaffen.“" },
+        { name: "Tooba", image: "/tooba-profile.jpg", email: "toobadeutsch@gmail.com", linkedin: "https://www.linkedin.com/in/syeda-tooba-hasnain-a9a17119a/", role: "Softwareentwicklung.", quote: "„Ich möchte Technologie entwickeln, die Menschen informiert, unterstützt und stärkt.“" },
       ],
       advisorsLabel: "Beratende",
       advisors: "Prof. Dr. Schmid, Prof. Mayer & Prof. Brysch",
@@ -205,13 +206,14 @@ const T = {
       ],
     },
     team: {
-      label: "The Team", headline: "Three founders. One vision.",
+      label: "The Team", headline: "Four founders. One vision.",
       intro: "We are mothers, women, and daughters. Our children are growing up in a world where they often find answers to sensitive questions online first. We want them instead to grow up in a world that supports them and where they can talk to us freely about anything.",
       motivation: "Our children are our greatest motivation. We won't stop until every young person has access to good, honest sex education.",
       profiles: [
-        { name: "Anne", role: "Co-founder, Education, Content and Strategy. Mother of two.", quote: "“When I was pregnant, I wondered how my daughter would one day learn about bodies and intimacy. That question drives me.”" },
-        { name: "Jil", role: "Co-founder, Education, Content and Strategy. Mother of three.", quote: "“Children ask questions, and they deserve good answers. As a mother of three, I want them to get those answers from us, not the internet.”" },
-        { name: "Ifrah & Tooba", role: "Ifrah, CTO; Tooba, Design, Research and Technology.", quote: "We are developing technology that gives young people guidance before false images do." },
+        { name: "Anne", image: "/anne-profile.jpg", email: "hermann.anne-maria@web.de", linkedin: "https://www.linkedin.com/in/anne-miller-hermann-7a35b6249/", role: "Co-founder, Education, Content and Strategy. Mother of two.", quote: "“When I was pregnant, I wondered how my daughter would one day learn about bodies and intimacy. That question drives me.”" },
+        { name: "Jil", image: "/jil-profile.jpg", email: "jil.clausen@web.de", linkedin: "https://www.linkedin.com/in/jil-clausen-925774240/", role: "Co-founder, Education, Content and Strategy. Mother of three.", quote: "“Children ask questions, and they deserve good answers. As a mother of three, I want them to get those answers from us, not the internet.”" },
+        { name: "Ifrah", image: "/ifrah-profile.png", email: "ifrahasif30@gmail.com", linkedin: "https://www.linkedin.com/in/ifrah-asif-1945b6139/", role: "Design, Research and CTO.", quote: "“We want to create a healthy environment for everyone.”" },
+        { name: "Tooba", image: "/tooba-profile.jpg", email: "toobadeutsch@gmail.com", linkedin: "https://www.linkedin.com/in/syeda-tooba-hasnain-a9a17119a/", role: "Software Development.", quote: "“I want to build technology that informs, supports, and empowers people.”" },
       ],
       advisorsLabel: "Advisors",
       advisors: "Prof. Dr. Schmid, Prof. Mayer & Prof. Brysch",
@@ -824,7 +826,12 @@ function StatisticsAndAnswerSection({ t, lang }) {
           <ul className="answer-feature-list">
             {t.evidence.featureLabels.map(label => <li key={label}>{label}</li>)}
           </ul>
-          <a className="answer-contact-button" href="mailto:info@insides-official.com">
+          <a
+            className="answer-contact-button"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info%40insides-official.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t.evidence.button}
           </a>
         </div>
@@ -960,10 +967,40 @@ function TeamSection({ t, lang }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 20 }}>
           {t.team.profiles.map((profile, index) => (
             <FadeIn key={profile.name} delay={index * 0.1}>
-              <article style={{ height: "100%", boxSizing: "border-box", padding: 28, borderRadius: 20, background: C.cream, border: "1px solid rgba(38,103,187,0.08)" }}>
-                <h3 style={{ fontFamily: "'Champ', sans-serif", color: C.midnight, fontSize: 27, margin: "0 0 10px" }}>{profile.name}</h3>
-                <p style={{ color: C.evergreen, fontSize: 14, fontWeight: 600, lineHeight: 1.6, margin: "0 0 16px" }}>{profile.role}</p>
-                <p style={{ color: "#555", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{profile.quote}</p>
+              <article style={{ height: "100%", boxSizing: "border-box", padding: 24, borderRadius: 20, background: C.cream, border: "1px solid rgba(38,103,187,0.08)", display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
+                  <img
+                    src={profile.image}
+                    alt={lang === "de" ? `Porträt von ${profile.name}` : `Portrait of ${profile.name}`}
+                    style={{ width: 68, height: 68, flex: "0 0 68px", borderRadius: "50%", objectFit: "cover", objectPosition: "center 35%" }}
+                  />
+                  <div>
+                    <h3 style={{ fontFamily: "'Champ', sans-serif", color: C.midnight, fontSize: 24, margin: "0 0 6px" }}>{profile.name}</h3>
+                    <p style={{ color: C.evergreen, fontSize: 13, fontWeight: 600, lineHeight: 1.5, margin: 0 }}>{profile.role}</p>
+                  </div>
+                </div>
+                {profile.quote && <p style={{ color: "#555", fontSize: 14, lineHeight: 1.7, margin: "0 0 18px" }}>{profile.quote}</p>}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 10, marginTop: "auto" }}>
+                  <a
+                    href={profile.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={lang === "de" ? `LinkedIn-Profil von ${profile.name}` : `LinkedIn profile for ${profile.name}`}
+                    style={{ display: "inline-flex", alignItems: "center", gap: 6, color: C.midnight, fontSize: 13, fontWeight: 600, textDecoration: "none" }}
+                  >
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="#0A66C2">
+                      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.44c.98 0 1.79-.77 1.79-1.72V1.72C24 .77 23.19 0 22.21 0h.01Z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                  <a
+                    href={`mailto:${profile.email}`}
+                    style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "#555", fontSize: 12, lineHeight: 1.5, textDecoration: "none", overflowWrap: "anywhere" }}
+                  >
+                    <span aria-hidden="true">✉</span>
+                    {profile.email}
+                  </a>
+                </div>
               </article>
             </FadeIn>
           ))}
@@ -1017,6 +1054,10 @@ export default function App() {
   const t = T[lang];
 
   const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setMenuOpen(false); };
+  const focusSignup = () => {
+    document.getElementById("signup-name")?.focus({ preventScroll: true });
+    scrollTo("hero");
+  };
   const navItems = ["features", "about", "faq", "contact"];
 
   return (
@@ -1084,6 +1125,7 @@ export default function App() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {/* Name field */}
               <input
+                id="signup-name"
                 value={name} onChange={e => setName(e.target.value)}
                 placeholder={lang === "de" ? "Dein Name" : "Your name"}
                 style={{ width: "100%", padding: "11px 18px", border: "1.5px solid rgba(228,183,200,0.4)", borderRadius: 50, outline: "none", fontFamily: "'Alecrim', sans-serif", fontSize: 14, background: "white", boxSizing: "border-box" }}
@@ -1187,7 +1229,6 @@ export default function App() {
                       <h3 style={{ fontSize: 28, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? <>Echter Talk.<br />Ohne Urteil.</> : <>Real talk.<br />No judgement.</>}</h3>
                       <p style={{ color: "rgb(66, 54, 32)", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "Fragen zu Beziehungen, Identität, Konsens oder Lust? Schluss mit toxischen Social-Media-Trends und unrealistischen Erwartungen. Insides bietet dir einen vollständig anonymen, moderierten Raum – mit nachvollziehbaren Charakteren, Peer-Austausch und privater KI-Begleitung." : "Questions about relationships, identity, consent or desire? Say goodbye to toxic social-media trends and unrealistic expectations. Insides offers a fully anonymous, moderated space — realistic characters, peer exchange and a private AI companion."}</p>
                     </div>
-                    <a href="/genz" style={{ marginTop: 18, color: C.blush, fontWeight: 700, textDecoration: "none" }}>{lang === "de" ? "Zur Plattform →" : "Visit platform →"}</a>
                   </motion.div>
 
                   {/* Card 2 */}
@@ -1197,7 +1238,6 @@ export default function App() {
                       <h3 style={{ fontSize: 24, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? "Dein Verbündeter in einer hyperdigitalen Welt." : "Your ally in a hyper-digital world."}</h3>
                       <p style={{ color: "rgba(255,255,255,0.88)", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "Kinder und Jugendliche haben heutzutage, lange bevor sie diese einordnen können, Zugang zu den unterschiedlichsten digitalen Inhalten. Online fehlen bisher jedoch sichere und fundierte Inhalte. Insides bietet so ein Angebot, um Jugendliche in der Entwicklung ihrer Beziehungskompetenz zu begleiten." : "Children and young people today encounter a wide range of digital content long before they can contextualize it. There is a lack of safe, evidence-based audiovisual content online. Insides offers resources to support young people in developing relationship skills and exploring their sexuality safely."}</p>
                     </div>
-                    <a href="/parents" style={{ marginTop: 18, color: C.blush, fontWeight: 700, textDecoration: "none" }}>{lang === "de" ? "Wie wir Kinder schützen →" : "How we protect children →"}</a>
                   </motion.div>
 
                   {/* Card 3 */}
@@ -1207,7 +1247,6 @@ export default function App() {
                       <h3 style={{ fontSize: 24, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? "Moderne Medienkompetenz für deinen Unterricht." : "Modern media literacy for your classroom."}</h3>
                       <p style={{ color: "rgba(255,255,255,0.9)", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "Sexualkundeunterricht ist ein wichtiger Zugang für Jugendliche zu Wissen über Sexualität. Wir helfen Lehrkräften, ihre Schüler:innen wirklich zu erreichen. Insides ist dein digitaler pädagogischer Assistent." : "Sex education is an important channel for young people to learn about sexuality. We support teachers in reaching students effectively — Insides acts as your digital pedagogical assistant."}</p>
                     </div>
-                    <a href="/educators" style={{ marginTop: 18, color: "white", fontWeight: 700, textDecoration: "underline" }}>{lang === "de" ? "Demo für Institutionen anfragen →" : "Request an institutional demo →"}</a>
                   </motion.div>
 
                   {/* Card 4 */}
@@ -1217,7 +1256,6 @@ export default function App() {
                       <h3 style={{ fontSize: 24, fontWeight: 900, margin: "0 0 12px", lineHeight: 1.05 }}>{lang === "de" ? "Skalierbare Wirkung an der Schnittstelle von EdTech & Digital Health." : "Scalable impact at the intersection of EdTech & Digital Health."}</h3>
                       <p style={{ color: "#333", fontSize: 14, lineHeight: 1.6 }}>{lang === "de" ? "„Insides“ befasst sich mit einem gravierenden, systemischen Marktversagen zwischen privaten Online-Recherchen und der institutionellen Bildung. Unser SaaS-Modell sorgt für margenstarkes Wachstum und trägt zur Lösung eines globalen Public-Health-Problems bei." : "Insides addresses a major systemic market failure between private online research and institutional education. Our layered SaaS model delivers margin-strong growth while contributing to a global public-health solution."}</p>
                     </div>
-                    <a href="/investors" style={{ marginTop: 18, color: C.midnight, fontWeight: 700, textDecoration: "none" }}>{lang === "de" ? "Investor Relations →" : "Investor relations →"}</a>
                   </motion.div>
                 </motion.div>
               </div>
@@ -1246,6 +1284,17 @@ export default function App() {
           <SectionHeader label={t.faq.label} headline={t.faq.headline} />
           {t.faq.items.map((item, i) => <FaqItem key={i} q={item.q} a={item.a} />)}
         </div>
+      </section>
+
+      {/* LAUNCH SIGNUP CTA */}
+      <section style={{ padding: "36px 24px", background: C.cream, textAlign: "center" }}>
+        <h2 style={{ fontFamily: "'Champ', sans-serif", fontSize: "clamp(22px,3vw,30px)", color: C.midnight, margin: "0 0 16px" }}>
+          {lang === "de" ? "Zum Start benachrichtigt werden?" : "Get notified when we launch"}
+        </h2>
+        <button type="button" onClick={focusSignup}
+          style={{ minHeight: 44, padding: "0 24px", border: 0, borderRadius: 50, background: C.midnight, color: "white", cursor: "pointer", fontFamily: "'Alecrim', sans-serif", fontSize: 14, fontWeight: 600 }}>
+          {lang === "de" ? "Jetzt vormerken" : "Sign up now"}
+        </button>
       </section>
 
       {/* CONTACT */}
@@ -1314,6 +1363,14 @@ export default function App() {
         </div>
         <div>© 2026 Insides by Intimate Insights — {t.footer}</div>
       </footer>
+
+      <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label={lang === "de" ? "Nach oben scrollen" : "Scroll to top"}
+        style={{ position: "fixed", right: 24, bottom: 24, zIndex: 150, width: 46, height: 46, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.35)", borderRadius: "50%", background: C.midnight, color: "white", cursor: "pointer", boxShadow: "0 4px 16px rgba(0,0,0,0.2)" }}>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </button>
 
       <style>{`
         @media(max-width:768px){

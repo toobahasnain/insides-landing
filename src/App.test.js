@@ -61,12 +61,65 @@ test('renders sourced statistics and the answer section in German and English', 
     'https://www.commonsensemedia.org/sites/default/files/research/report/2022-teens-and-pornography-final-web.pdf'
   );
   expect(screen.getByRole('heading', { name: 'Unsere Antwort: Orientierung statt Sprachlosigkeit' })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Kontakt aufnehmen' })).toHaveAttribute('href', 'mailto:info@insides-official.com');
+  expect(screen.getByRole('link', { name: 'Kontakt aufnehmen' })).toHaveAttribute(
+    'href',
+    'https://mail.google.com/mail/?view=cm&fs=1&to=info%40insides-official.com'
+  );
   expect(screen.getByRole('img', { name: 'Die Insides-Mitgründerinnen Anne und Jil sitzen nebeneinander.' })).toBeInTheDocument();
 
   await userEvent.click(screen.getByRole('button', { name: 'EN' }));
 
   expect(screen.getByText('At least 1.2 million')).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Our response: Guidance instead of silence' })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Get in touch' })).toHaveAttribute('href', 'mailto:info@insides-official.com');
+  expect(screen.getByRole('link', { name: 'Get in touch' })).toHaveAttribute(
+    'href',
+    'https://mail.google.com/mail/?view=cm&fs=1&to=info%40insides-official.com'
+  );
+});
+
+test('launch signup CTA focuses the name field and the arrow scrolls to the top', async () => {
+  window.history.pushState({}, '', '/');
+  const { container } = render(<App />);
+  const hero = container.querySelector('#hero');
+  hero.scrollIntoView = jest.fn();
+  const scrollTo = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+
+  await userEvent.click(screen.getByRole('button', { name: 'Jetzt vormerken' }));
+
+  expect(screen.getByPlaceholderText('Dein Name')).toHaveFocus();
+  expect(hero.scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth' });
+
+  fireEvent.click(screen.getByRole('button', { name: 'Nach oben scrollen' }));
+  expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
+  scrollTo.mockRestore();
+});
+
+test('renders individual team portraits, LinkedIn profiles, and email links', async () => {
+  window.history.pushState({}, '', '/');
+  render(<App />);
+
+  const profiles = [
+    { name: 'Anne', email: 'hermann.anne-maria@web.de', linkedin: 'https://www.linkedin.com/in/anne-miller-hermann-7a35b6249/', image: '/anne-profile.jpg' },
+    { name: 'Jil', email: 'jil.clausen@web.de', linkedin: 'https://www.linkedin.com/in/jil-clausen-925774240/', image: '/jil-profile.jpg' },
+    { name: 'Ifrah', email: 'ifrahasif30@gmail.com', linkedin: 'https://www.linkedin.com/in/ifrah-asif-1945b6139/', image: '/ifrah-profile.png' },
+    { name: 'Tooba', email: 'toobadeutsch@gmail.com', linkedin: 'https://www.linkedin.com/in/syeda-tooba-hasnain-a9a17119a/', image: '/tooba-profile.jpg' },
+  ];
+
+  profiles.forEach(profile => {
+    expect(screen.getByRole('img', { name: `Porträt von ${profile.name}` })).toHaveAttribute('src', profile.image);
+    expect(screen.getByRole('link', { name: `LinkedIn-Profil von ${profile.name}` })).toHaveAttribute('href', profile.linkedin);
+    expect(screen.getByRole('link', { name: profile.email })).toHaveAttribute('href', `mailto:${profile.email}`);
+  });
+
+  expect(screen.getByText('Design, Research und CTO.')).toBeInTheDocument();
+  expect(screen.getByText('Softwareentwicklung.')).toBeInTheDocument();
+  expect(screen.getByText('„Wir möchten ein gesundes Umfeld für alle schaffen.“')).toBeInTheDocument();
+  expect(screen.getByText('„Ich möchte Technologie entwickeln, die Menschen informiert, unterstützt und stärkt.“')).toBeInTheDocument();
+
+  await userEvent.click(screen.getByRole('button', { name: 'EN' }));
+
+  expect(screen.getByText('Design, Research and CTO.')).toBeInTheDocument();
+  expect(screen.getByText('Software Development.')).toBeInTheDocument();
+  expect(screen.getByText('“We want to create a healthy environment for everyone.”')).toBeInTheDocument();
+  expect(screen.getByText('“I want to build technology that informs, supports, and empowers people.”')).toBeInTheDocument();
 });
