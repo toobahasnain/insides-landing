@@ -526,27 +526,20 @@ function FadeIn({ children, delay = 0, y = 40, style = {} }) {
 // ── VIDEO MOCKUP ──────────────────────────────────────────
 function VideoMockup({ lang = "de" }) {
   return (
-    <motion.div
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-      style={{ width: 220, height: 300, borderRadius: 18, overflow: "hidden", boxShadow: "0 30px 60px rgba(0,0,0,0.35)", border: "1.5px solid rgba(255,255,255,0.08)", position: "relative" }}
-    >
-      <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=440&h=600&fit=crop&crop=center" alt="romantic" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.85) 100%)" }} />
-      <div style={{ position: "absolute", top: "38%", left: "50%", transform: "translate(-50%,-50%)" }}>
-        <motion.div animate={{ scale: [1, 1.12, 1] }} transition={{ duration: 2, repeat: Infinity }}
-          style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>⏸</motion.div>
-      </div>
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "14px 12px" }}>
-        <div style={{ color: "white", fontSize: 12, fontWeight: 600, marginBottom: 3 }}>{lang === "de" ? "Staffel 1 · Episode 1" : "Season 1 · Episode 1"}</div>
-        <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 10, marginBottom: 10 }}>{lang === "de" ? "Erste Liebe — Was ist normal?" : "First Love — What is normal?"}</div>
-        <div style={{ height: 3, background: "rgba(255,255,255,0.2)", borderRadius: 2 }}>
-          <motion.div animate={{ width: ["0%", "65%"] }} transition={{ duration: 4, repeat: Infinity, repeatDelay: 1 }}
-            style={{ height: "100%", background: C.blush, borderRadius: 2 }} />
-        </div>
-      </div>
-      <div style={{ position: "absolute", top: 12, left: 12, background: "rgba(0,0,0,0.5)", borderRadius: 6, padding: "3px 8px", color: "white", fontSize: 10, fontWeight: 700, letterSpacing: 1 }}>INSIDES</div>
-    </motion.div>
+    <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <img
+        src="/Insides Mockup.png"
+        alt="Insides mockup"
+        style={{
+          width: "100%",
+          maxWidth: 420,
+          height: "auto",
+          display: "block",
+          borderRadius: 18,
+          objectFit: "contain"
+        }}
+      />
+    </div>
   );
 }
 
